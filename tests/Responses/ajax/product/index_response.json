@@ -34,6 +34,20 @@
             },
             {
                 "id": @integer@,
+                "name": "Color mug",
+                "code": "MUG_COLOR",
+                "options": [],
+                "color": "red",
+                "averageRating": 0,
+                "images": [],
+                "_links": {
+                    "self": {
+                        "href": "\/api\/v1\/products\/MUG_COLOR"
+                    }
+                }
+            },
+            {
+                "id": @integer@,
                 "name": "Lotr mug",
                 "code": "MUG_LOTR",
                 "options": [],
@@ -139,19 +153,6 @@
                 "_links": {
                     "self": {
                         "href": "\/api\/v1\/products\/PRODUCT_15"
-                    }
-                }
-            },
-            {
-                "id": @integer@,
-                "name": "Product 16",
-                "code": "PRODUCT_16",
-                "options": [],
-                "averageRating": 0,
-                "images": [],
-                "_links": {
-                    "self": {
-                        "href": "\/api\/v1\/products\/PRODUCT_16"
                     }
                 }
             }

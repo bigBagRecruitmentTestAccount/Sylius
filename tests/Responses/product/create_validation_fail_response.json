@@ -4,6 +4,7 @@
   "errors": {
       "children": {
           "enabled":{},
+          "color":[],
           "translations":{},
           "attributes":{},
           "associations":{},

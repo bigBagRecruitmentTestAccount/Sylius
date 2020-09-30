@@ -1,24 +1,20 @@
 {
-    "code": 400,
+    "code": @integer@,
     "message": "Validation Failed",
     "errors": {
         "children": {
+            "color": {
+                "errors": [
+                    "This value is not valid."
+                ]
+            },
             "enabled": {},
-            "color": {},
             "translations": {
                 "children": {
                     "en_US": {
                         "children": {
-                            "name": {
-                                "errors": [
-                                    "Product name must not be longer than 255 characters."
-                                ]
-                            },
-                            "slug": {
-                                "errors": [
-                                    "Product slug must not be longer than 255 characters."
-                                ]
-                            },
+                            "name": {},
+                            "slug": {},
                             "description": {},
                             "metaKeywords": {},
                             "metaDescription": {},

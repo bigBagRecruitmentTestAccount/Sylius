@@ -16,5 +16,17 @@
             </td>
         </tr>
     {% endfor %}
+    {% if attribute(product, 'color') is defined %}
+        <tr>
+            <td class="sylius-product-attribute-name">{{ 'sylius.ui.color'|trans }}</td>
+            <td class="sylius-product-attribute-value">
+                {% if product.color %}
+                    {{ ('sylius.ui.colors.'~product.color)|trans }}
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+        </tr>
+    {% endif %}
     </tbody>
 </table>

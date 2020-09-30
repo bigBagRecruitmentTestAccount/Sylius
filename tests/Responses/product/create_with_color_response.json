@@ -1,0 +1,30 @@
+{
+    "name": "Theme Color Mug",
+    "id": @integer@,
+    "code": "COLOR_MUG_TH",
+    "color": "red",
+    "attributes": [],
+    "options": [],
+    "associations": [],
+    "translations": {
+        "en_US": {
+            "locale": "en_US",
+            "id": @integer@,
+            "name": "Theme Color Mug",
+            "slug": "theme-color-mug"
+        }
+    },
+    "productTaxons": [],
+    "channels": [],
+    "reviews": [],
+    "averageRating": 0,
+    "images": [],
+    "_links": {
+        "self": {
+            "href": "/api/v1/products/COLOR_MUG_TH"
+        },
+        "variants": {
+            "href": "/api/v1/products/COLOR_MUG_TH/variants/"
+        }
+    }
+}
