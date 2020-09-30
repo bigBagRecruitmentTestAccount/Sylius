@@ -156,6 +156,84 @@ EOT;
     /**
      * @test
      */
+    public function it_does_not_allow_create_product_with_unknown_color()
+    {
+        $this->loadFixturesFromFile('authentication/api_administrator.yml');
+        $this->loadFixturesFromFile('resources/locales.yml');
+
+        $data =
+<<<EOT
+        {
+            "code": "COLOR_MUG_TH",
+            "color": "unknown",
+            "translations": {
+                "en_US": {
+                    "name": "Theme Color Mug",
+                    "slug": "theme-color-mug"
+                }
+            }
+        }
+EOT;
+
+        $this->client->request('POST', '/api/v1/products/', [], [], static::$authorizedHeaderWithContentType, $data);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'product/create_with_color_validation_fail_response', Response::HTTP_BAD_REQUEST);
+    }
+
+    /**
+     * @test
+     */
+    public function it_allows_create_product_with_color()
+    {
+        $this->loadFixturesFromFile('authentication/api_administrator.yml');
+        $this->loadFixturesFromFile('resources/locales.yml');
+
+        $data =
+<<<EOT
+        {
+            "code": "COLOR_MUG_TH",
+            "color": "red",
+            "translations": {
+                "en_US": {
+                    "name": "Theme Color Mug",
+                    "slug": "theme-color-mug"
+                }
+            }
+        }
+EOT;
+
+        $this->client->request('POST', '/api/v1/products/', [], [], static::$authorizedHeaderWithContentType, $data);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'product/create_with_color_response', Response::HTTP_CREATED);
+    }
+
+    /**
+     * @test
+     */
+    public function it_allows_updating_color_only()
+    {
+        $this->loadFixturesFromFile('authentication/api_administrator.yml');
+        $products = $this->loadFixturesFromFile('resources/products.yml');
+        $this->loadFixturesFromFile('resources/locales.yml');
+        $product = $products['product4'];
+
+        $data =
+<<<EOT
+        {
+            "color": "blue"
+        }
+EOT;
+        $this->client->request('PATCH', $this->getProductUrl($product), [], [], static::$authorizedHeaderWithContentType, $data);
+        $response = $this->client->getResponse();
+
+        $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
+    }
+
+    /**
+     * @test
+     */
     public function it_does_not_allow_to_create_product_with_too_long_translations()
     {
         $this->loadFixturesFromFile('authentication/api_administrator.yml');

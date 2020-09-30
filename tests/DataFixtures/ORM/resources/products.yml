@@ -43,6 +43,15 @@ Sylius\Component\Core\Model\Product:
         slug: "mug-breaking-bad"
         name: "Breaking bad mug"
         description: <paragraph(2)>
+    product4:
+        currentLocale: "en_US"
+        fallbackLocale: "en_US"
+        code: "MUG_COLOR"
+        slug: "mug-color"
+        name: "Color mug"
+        color: "red"
+        description: <paragraph(2)>
+
 
 Sylius\Component\Core\Model\ProductImage:
     product_thumbnail:

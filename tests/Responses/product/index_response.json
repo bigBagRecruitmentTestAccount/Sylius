@@ -2,7 +2,7 @@
     "page": 1,
     "limit": 10,
     "pages": 3,
-    "total": 22,
+    "total": 23,
     "_links": {
         "self": {
             "href": "\/api\/v1\/products\/?page=1&limit=10"
@@ -29,6 +29,20 @@
                 "_links": {
                     "self": {
                         "href": "\/api\/v1\/products\/MUG_BB"
+                    }
+                }
+            },
+            {
+                "id": @integer@,
+                "name": "Color mug",
+                "code": "MUG_COLOR",
+                "options": [],
+                "color": "red",
+                "averageRating": 0,
+                "images": [],
+                "_links": {
+                    "self": {
+                        "href": "\/api\/v1\/products\/MUG_COLOR"
                     }
                 }
             },
@@ -139,19 +153,6 @@
                 "_links": {
                     "self": {
                         "href": "\/api\/v1\/products\/PRODUCT_15"
-                    }
-                }
-            },
-            {
-                "id": @integer@,
-                "name": "Product 16",
-                "code": "PRODUCT_16",
-                "options": [],
-                "averageRating": 0,
-                "images": [],
-                "_links": {
-                    "self": {
-                        "href": "\/api\/v1\/products\/PRODUCT_16"
                     }
                 }
             }

@@ -2,7 +2,7 @@
     "page": 2,
     "limit": 10,
     "pages": 3,
-    "total": 22,
+    "total": 23,
     "_links": {
         "self": {
             "href": "\/api\/v1\/products\/?page=2&limit=10"
@@ -22,6 +22,19 @@
     },
     "_embedded": {
         "items": [
+            {
+                "id": @integer@,
+                "name": "Product 16",
+                "code": "PRODUCT_16",
+                "options": [],
+                "averageRating": 0,
+                "images": [],
+                "_links": {
+                    "self": {
+                        "href": "\/api\/v1\/products\/PRODUCT_16"
+                    }
+                }
+            },
             {
                 "id": @integer@,
                 "name": "Product 17",
@@ -136,19 +149,6 @@
                 "_links": {
                     "self": {
                         "href": "\/api\/v1\/products\/PRODUCT_6"
-                    }
-                }
-            },
-            {
-                "id": @integer@,
-                "name": "Product 7",
-                "code": "PRODUCT_7",
-                "options": [],
-                "averageRating": 0,
-                "images": [],
-                "_links": {
-                    "self": {
-                        "href": "\/api\/v1\/products\/PRODUCT_7"
                     }
                 }
             }

@@ -36,6 +36,9 @@ class Product implements ProductInterface
     /** @var string */
     protected $code;
 
+    /** @var string|null */
+    protected $color;
+
     /**
      * @var Collection|AttributeValueInterface[]
      *
@@ -107,6 +110,16 @@ class Product implements ProductInterface
     public function setCode(?string $code): void
     {
         $this->code = $code;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(?string $color): void
+    {
+        $this->color = $color;
     }
 
     public function getName(): ?string

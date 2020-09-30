@@ -7,6 +7,10 @@ Sylius\Component\Product\Model\Product:
             type: integer
             xml_attribute: true
             groups: [Default, Detailed, Autocomplete]
+        color:
+            expose: true
+            type: string
+            groups: [Default, Detailed, Autocomplete]
         code:
             expose: true
             type: string

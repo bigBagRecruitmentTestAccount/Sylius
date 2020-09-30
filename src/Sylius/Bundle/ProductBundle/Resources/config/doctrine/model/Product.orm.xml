@@ -60,6 +60,7 @@
             <gedmo:timestampable on="update"/>
         </field>
         <field name="enabled" column="enabled" type="boolean" />
+        <field name="color" column="color" type="string" nullable="true" />
 
         <one-to-many field="associations" target-entity="Sylius\Component\Product\Model\ProductAssociationInterface" mapped-by="owner" orphan-removal="true">
             <cascade>

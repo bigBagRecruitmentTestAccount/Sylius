@@ -23,11 +23,16 @@ use Sylius\Component\Product\Resolver\ProductVariantResolverInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Translation\Provider\TranslationLocaleProviderInterface;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 final class ProductType extends AbstractResourceType
 {
+    const PRODUCT_COLOR_GREEN = 'green';
+    const PRODUCT_COLOR_BLUE = 'blue';
+    const PRODUCT_COLOR_RED = 'red';
+
     /** @var ProductVariantResolverInterface */
     private $variantResolver;
 
@@ -61,6 +66,18 @@ final class ProductType extends AbstractResourceType
             ->addEventSubscriber(new ProductOptionFieldSubscriber($this->variantResolver))
             ->addEventSubscriber(new SimpleProductSubscriber())
             ->addEventSubscriber(new BuildAttributesFormSubscriber($this->attributeValueFactory, $this->localeProvider))
+            ->add('color', ChoiceType::class, [
+                'choices' => [
+                    self::PRODUCT_COLOR_RED,
+                    self::PRODUCT_COLOR_GREEN,
+                    self::PRODUCT_COLOR_BLUE,
+                ],
+                'choice_label' => function ($choice) {
+                    return sprintf('sylius.form.color_variant.%s', $choice);
+                },
+                'required' => false,
+                'label' => 'sylius.form.product.color',
+            ])
             ->add('enabled', CheckboxType::class, [
                 'required' => false,
                 'label' => 'sylius.form.product.enabled',

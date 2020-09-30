@@ -4,6 +4,7 @@
 sylius:
     form:
         product:
+            color: Kolor
             name: Nazwa
             description: Opis
             attributes: Cechy
@@ -29,3 +30,7 @@ sylius:
         option_value:
             add_value: Dodaj wartość
             value: Wartość
+        color_variant:
+            red: Czerwony
+            blue: Niebieski
+            green: Zielony
